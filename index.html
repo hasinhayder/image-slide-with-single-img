@@ -95,7 +95,7 @@
             setTimeout(function(){
                 if(counter==imgs.length) counter=0;
                 $(".center img").attr("src",imgs[counter]).removeClass("fadeOutRight").addClass("zoomIn");
-                if(imgs[counter]!=undefined) $(".center").css("backgroundImage","url("+imgs[counter+1]+")")
+                if(imgs[counter+1]!=undefined) $(".center").css("backgroundImage","url("+imgs[counter+1]+")")
             },500);
         });
 
