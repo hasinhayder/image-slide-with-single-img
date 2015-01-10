@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css"/>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #fff;
+            position: absolute;
+        }
+
+        .center {
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .center h1 {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .center p{
+            padding-top:50px;
+            text-align: center;
+            color: #ccc;
+            font-size: 12px;
+
+        }
+
+        .center p a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .center p a:hover{
+            color:#222;
+        }
+
+        .center img{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<a href="hasinhayder.github.io/image-slide-with-single-div/"><img style="z-index:999999999;position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+<div class="container">
+    <div class="center animated">
+        <h1>Image Animation with A Single Div, CSS3 & some jQuery</h1>
+        <img class="animated" src="https://d13yacurqjgara.cloudfront.net/users/35381/screenshots/1875997/island_1x.png" alt=""/>
+        <p>
+            Artworks from <a target="_blank" href="https://dribbble.com/megdraws">Meg Robichaud</a>,
+            <a target="_blank" href="https://dribbble.com/intriligator">Artem Borysenko</a>,
+            <a target="_blank" href="https://dribbble.com/RypeArts">Ryan Putnam</a>
+        </p>
+    </div>
+</div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+    var imgs=[
+            "https://d13yacurqjgara.cloudfront.net/users/35381/screenshots/1875997/island_1x.png",
+            "https://d13yacurqjgara.cloudfront.net/users/6234/screenshots/576316/banana.png",
+            "https://d13yacurqjgara.cloudfront.net/users/3460/screenshots/1865816/rescued-illos_1x.png",
+            "https://d13yacurqjgara.cloudfront.net/users/3460/screenshots/1866686/rivalry_1x.png",
+            "https://d13yacurqjgara.cloudfront.net/users/3460/screenshots/1793074/sir_crags_a_lot_1x.png",
+            "https://d13yacurqjgara.cloudfront.net/users/3460/screenshots/1732019/sf-cryptids_1x.png",
+            "https://d13yacurqjgara.cloudfront.net/users/3460/screenshots/1693011/db_space_1x.png",
+            "https://d13yacurqjgara.cloudfront.net/users/35381/screenshots/1858090/xmas1_1x.png"
+    ];
+    var counter =0;
+    $(document).ready(function () {
+        $(".center img").on("click",function(){
+            $(this).removeClass("zoomIn").addClass("fadeOutRight");
+            counter++;
+            setTimeout(function(){
+                if(counter==imgs.length) counter=0;
+                $(".center img").attr("src",imgs[counter]).removeClass("fadeOutRight").addClass("zoomIn");
+            },400);
+        });
+
+    });
+</script>
+</body>
+</html>
