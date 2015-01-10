@@ -25,6 +25,10 @@
             top: 50%;
             transform: translateY(-50%);
             text-align: center;
+
+            background-image: url(https://d13yacurqjgara.cloudfront.net/users/6234/screenshots/576316/banana.png);
+            background-position: -10000px,-10000px;
+            background-repeat: no-repeat;
         }
 
         .center h1 {
@@ -91,6 +95,7 @@
             setTimeout(function(){
                 if(counter==imgs.length) counter=0;
                 $(".center img").attr("src",imgs[counter]).removeClass("fadeOutRight").addClass("zoomIn");
+                if(imgs[counter]!=undefined) $(".center").css("backgroundImage","url("+imgs[counter+1]+")")
             },500);
         });
 
