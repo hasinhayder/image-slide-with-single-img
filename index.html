@@ -89,12 +89,13 @@
     ];
     var counter =0;
     $(document).ready(function () {
-        $(".center img").on("click",function(){
+        $(".center").on("click","img",function(){
             $(this).removeClass("zoomIn").addClass("fadeOutRight");
             counter++;
             setTimeout(function(){
                 if(counter==imgs.length) counter=0;
-                $(".center img").attr("src",imgs[counter]).removeClass("fadeOutRight").addClass("zoomIn");
+                $(".center img").remove();
+                $("<img/>").attr("src",imgs[counter]).addClass("animated zoomIn").insertBefore($(".center p"));
                 if(imgs[counter+1]!=undefined) $(".center").css("backgroundImage","url("+imgs[counter+1]+")")
             },500);
         });
